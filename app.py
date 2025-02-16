@@ -174,7 +174,7 @@ def fetch_info():
   
     account_info = player_data.get("AccountInfo", {})      
     account_profile_info = player_data.get("AccountProfileInfo", {})      
-    captain_info = player_data.get("captainBasicInfo", {})      
+    captain_basic_info = player_data.get("captainBasicInfo", {})      
     guild_info = player_data.get("GuildInfo", {})      
     social_info = player_data.get("socialinfo", {})      
     pet_info = player_data.get("petInfo", {})      
@@ -267,12 +267,15 @@ Account Info:
 ├─ rewardState: `{credit_score.get('rewardState', '0')}`
 ├─ periodicSummaryStartTime: `{format_time(credit_score.get('periodicSummaryStartTime', 'Not Found'))}`
 └─ periodicSummaryEndTime: `{format_time(credit_score.get('periodicSummaryEndTime', 'Not Found'))}`
-"""
+"""  
   
     # Calculate elapsed time and wait if necessary so that response is sent after at least 1 second  
     elapsed = time.time() - start_time  
     if elapsed < 1:  
-        time.sleep(1 - elapsed)
+        time.sleep(1 - elapsed)  
+  
+    total_time = time.time() - start_time  
+    response_message += f"\nTotal Time Taken: {total_time:.2f} seconds\n"  
   
     return Response(response_message, mimetype='text/plain')  
   
