@@ -197,8 +197,8 @@ Account Info:
 ├─ AccountRegion: `{account_info.get('AccountRegion', 'Not Found')}`
 ├─ AccountLevel: `{account_info.get('AccountLevel', 'Not Found')}`
 ├─ AccountEXP: `{account_info.get('AccountEXP', 'Not Found')}`
-├─ AccountBannerId: `{account_info.get('AccountBannerId', 'Not Found')}`
-├─ AccountAvatarId: `{account_info.get('AccountAvatarId', 'Not Found')}`
+├─ AccountBannerId: `{account_info.get('AccountBannerId', 'Default')}`
+├─ AccountAvatarId: `{account_info.get('AccountAvatarId', 'Default')}`
 ├─ BrRankPoint: `{account_info.get('BrRankPoint', 'Not Found')}`
 ├─ hasElitePass: `{account_info.get('hasElitePass', 'False')}`
 ├─ Role: `{account_info.get('Role', 'Not Found')}`
@@ -218,7 +218,7 @@ Account Info:
 └─ ShowCsRank: `{account_info.get('ShowCsRank', 'Not Found')}`
 
 ┌ 👕 ACCOUNT OVERVIEW:
-├─ EquippedOutfit: `{account_profile_info.get('EquippedOutfit', 'Not Found')}`
+├─ EquippedOutfit: `Graphically Presented Below! 😉`
 └─ EquippedSkills: `{formatted_skills}`
 
 ┌ 🛡️ GuildInfo:
@@ -235,8 +235,8 @@ Account Info:
      ├─ region: `{captain_basic_info.get('region', 'N/A')}`
      ├─ level: `{captain_basic_info.get('level', 'N/A')}`
      ├─ exp: `{captain_basic_info.get('exp', 'N/A')}`
-     ├─ bannerId: `{captain_basic_info.get('bannerId', 'N/A')}`
-     ├─ headPic: `{captain_basic_info.get('headPic', 'N/A')}`
+     ├─ bannerId: `{captain_basic_info.get('bannerId', 'Default')}`
+     ├─ headPic: `{captain_basic_info.get('headPic', 'Default')}`
      ├─ lastLoginAt: `{format_time(captain_basic_info.get('lastLoginAt', 'N/A'))}`
      ├─ rank: `{captain_basic_info.get('rank', 'N/A')}`
      ├─ rankingPoints: `{captain_basic_info.get('rankingPoints', 'N/A')}`
@@ -272,7 +272,7 @@ Account Info:
     # Calculate elapsed time and wait if necessary so that response is sent after at least 1 second  
     elapsed = time.time() - start_time  
     if elapsed < 1:  
-        time.sleep(1 - elapsed)
+        time.sleep(1 - elapsed)  
   
     return Response(response_message, mimetype='text/plain')  
   
