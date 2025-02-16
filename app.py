@@ -189,63 +189,90 @@ Response 1:
 Fetching details for UID {uid}, nickname {account_info.get('AccountName', 'Not Found')} in region {used_region}...  
   
 Response 2:  
-Account Info:  
-┌🧑‍💻 ACCOUNT BASIC INFO  
-├─ Name: {account_info.get('AccountName', 'Not Found')}  
-├─ UID: {uid}  
-├─ Region: {account_info.get('AccountRegion', 'Not Found')}  
-├─ Level: {account_info.get('AccountLevel', 'Not Found')}  (Exp: {account_info.get('AccountEXP', 'Not Found')})  
-├─ Honor: {credit_score.get('creditScore', 'Not Found')}  
-├─ Title: {account_info.get('Title', 'Not Found')}  
-└─ Signature: {social_info.get('AccountSignature', 'Not Found')}  
-  
-┌🎮 ACCOUNT ACTIVITY  
-├─ Most Recent Ob: {account_info.get('ReleaseVersion', 'Not Found')}  
-├─ Fire Pass: {account_info.get('hasElitePass', 'False')}  
-├─ Current BP Badges: {account_info.get('AccountBPBadges', 'Not Found')}  
-├─ BR Rank: {account_info.get('BrMaxRank', 'Not Found')}  
-├─ CS Points: {account_info.get('CsMaxRank', 'Not Found')}  
-├─ Created At: {create_time}  
-└─ Last Login: {last_login}  
-  
-┌👕 ACCOUNT OVERVIEW  
-├─ Avatar ID: {account_info.get('AccountAvatarId', 'Default')}  
-├─ Banner ID: {account_info.get('AccountBannerId', 'Default')}  
-├─ Equipped Skill: {formatted_skills}  
-├─ Equipped Gun ID: {account_info.get('EquippedWeapon', 'Not Equpped')}  
-└─ Outfits: Graphically Presented Below! 😉  
-  
-┌🐾 PET DETAILS  
-├─ Equipped?: {pet_info.get('isSelected', 'Not Found')}  
-├─ Pet Name: {pet_info.get('name', 'Not Found')}  
-├─ Pet Type: {pet_info.get('id', 'Not Found')}  
-├─ Pet Exp: {pet_info.get('exp', 'Not Found')}  
-└─ Pet Level: {pet_info.get('level', 'Not Found')}  
-  
-┌🛡️ GUILD INFO  
-├─ Guild Name: {guild_info.get('GuildName', 'Not Found')}  
-├─ Guild ID: {guild_info.get('GuildID', 'Not Found')}  
-├─ Guild Level: {guild_info.get('GuildLevel', 'Not Found')}  
-├─ Guild Members: {guild_info.get('GuildMember', 'Not Found')}  
-└─ Leader Info:  
-   ├─ Leader Name: {captain_info.get('nickname', 'N/A')}  
-   ├─ Leader UID: {captain_info.get('accountId', 'N/A')}  
-   ├─ Leader Level: {captain_info.get('level', 'N/A')} (Exp: {captain_info.get('exp', 'N/A')})  
-   ├─ Leader Created At: {format_time(captain_info.get('createAt', 'N/A'))}  
-   ├─ Leader Last Login: {format_time(captain_info.get('lastLoginAt', 'N/A'))}  
-   ├─ Leader Title: {captain_info.get('title', 'N/A')}  
-   ├─ Leader Weapon: {captain_info.get('EquippedWeapon', 'Not Found')}  
-   ├─ Leader BR Point: {captain_info.get('rankingPoints', 'N/A')}  
-   └─ Leader CS Point: {captain_info.get('csMaxRank', 'N/A')}  
-"""  
+Account Info:
+┌ 👤 ACCOUNT BASIC INFO:
+├─ AccountType: `{account_info.get('AccountType', 'Not Found')}`
+├─ AccountName: `{account_info.get('AccountName', 'Not Found')}`
+├─ AccountUid: `{uid}`
+├─ AccountRegion: `{account_info.get('AccountRegion', 'Not Found')}`
+├─ AccountLevel: `{account_info.get('AccountLevel', 'Not Found')}`
+├─ AccountEXP: `{account_info.get('AccountEXP', 'Not Found')}`
+├─ AccountBannerId: `{account_info.get('AccountBannerId', 'Not Found')}`
+├─ AccountAvatarId: `{account_info.get('AccountAvatarId', 'Not Found')}`
+├─ BrRankPoint: `{account_info.get('BrRankPoint', 'Not Found')}`
+├─ hasElitePass: `{account_info.get('hasElitePass', 'False')}`
+├─ Role: `{account_info.get('Role', 'Not Found')}`
+├─ AccountBPBadges: `{account_info.get('AccountBPBadges', 'Not Found')}`
+├─ AccountBPID: `{account_info.get('AccountBPID', 'Not Found')}`
+├─ AccountSeasonId: `{account_info.get('AccountSeasonId', 'Not Found')}`
+├─ AccountLikes: `{account_info.get('AccountLikes', 'Not Found')}`
+├─ AccountLastLogin: `{format_time(account_info.get('AccountLastLogin', 'Not Found'))}`
+├─ CsRankPoint: `{account_info.get('CsRankPoint', 'Not Found')}`
+├─ EquippedWeapon: `{account_info.get('EquippedWeapon', 'Not Found')}`
+├─ BrMaxRank: `{account_info.get('BrMaxRank', 'Not Found')}`
+├─ CsMaxRank: `{account_info.get('CsMaxRank', 'Not Found')}`
+├─ AccountCreateTime: `{format_time(account_info.get('AccountCreateTime', 'Not Found'))}`
+├─ Title: `{account_info.get('Title', 'Not Found')}`
+├─ ReleaseVersion: `{account_info.get('ReleaseVersion', 'Not Found')}`
+├─ ShowBrRank: `{account_info.get('ShowBrRank', 'Not Found')}`
+└─ ShowCsRank: `{account_info.get('ShowCsRank', 'Not Found')}`
+
+┌ 👕 ACCOUNT OVERVIEW:
+├─ EquippedOutfit: `{account_profile_info.get('EquippedOutfit', 'Not Found')}`
+└─ EquippedSkills: `{formatted_skills}`
+
+┌ 🛡️ GuildInfo:
+├─ GuildID: `{guild_info.get('GuildID', 'Not Found')}`
+├─ GuildName: `{guild_info.get('GuildName', 'Not Found')}`
+├─ GuildOwner: `{guild_info.get('GuildOwner', 'Not Found')}`
+├─ GuildLevel: `{guild_info.get('GuildLevel', 'Not Found')}`
+├─ GuildCapacity: `{guild_info.get('GuildCapacity', 'Not Found')}`
+└─ GuildMember: `{guild_info.get('GuildMember', 'Not Found')}`
+     ├─ 👤 CaptainBasicInfo:
+     ├─ accountId: `{captain_basic_info.get('accountId', 'N/A')}`
+     ├─ accountType: `{captain_basic_info.get('accountType', 'N/A')}`
+     ├─ nickname: `{captain_basic_info.get('nickname', 'N/A')}`
+     ├─ region: `{captain_basic_info.get('region', 'N/A')}`
+     ├─ level: `{captain_basic_info.get('level', 'N/A')}`
+     ├─ exp: `{captain_basic_info.get('exp', 'N/A')}`
+     ├─ bannerId: `{captain_basic_info.get('bannerId', 'N/A')}`
+     ├─ headPic: `{captain_basic_info.get('headPic', 'N/A')}`
+     ├─ lastLoginAt: `{format_time(captain_basic_info.get('lastLoginAt', 'N/A'))}`
+     ├─ rank: `{captain_basic_info.get('rank', 'N/A')}`
+     ├─ rankingPoints: `{captain_basic_info.get('rankingPoints', 'N/A')}`
+     ├─ EquippedWeapon: `{captain_basic_info.get('EquippedWeapon', 'Not Found')}`
+     ├─ maxRank: `{captain_basic_info.get('maxRank', 'N/A')}`
+     ├─ csMaxRank: `{captain_basic_info.get('csMaxRank', 'N/A')}`
+     ├─ createAt: `{format_time(captain_basic_info.get('createAt', 'N/A'))}`
+     ├─ title: `{captain_basic_info.get('title', 'N/A')}`
+     ├─ releaseVersion: `{captain_basic_info.get('releaseVersion', 'N/A')}`
+     ├─ showBrRank: `{captain_basic_info.get('showBrRank', 'N/A')}`
+     └─ showCsRank: `{captain_basic_info.get('showCsRank', 'N/A')}`
+
+┌ 🐾 PetInfo:
+├─ id: `{pet_info.get('id', 'Not Found')}`
+├─ name: `{pet_info.get('name', 'Not Found')}`
+├─ level: `{pet_info.get('level', 'Not Found')}`
+├─ exp: `{pet_info.get('exp', 'Not Found')}`
+├─ isSelected: `{pet_info.get('isSelected', 'Not Found')}`
+└─ skinId: `{pet_info.get('skinId', 'Not Found')}`
+
+┌ 🎮 socialinfo:
+├─ AccountLanguage: `{social_info.get('AccountLanguage', 'Not Found')}`
+├─ AccountSignature: `{social_info.get('AccountSignature', 'Not Found')}`
+└─ AccountPreferMode: `{social_info.get('AccountPreferMode', 'Not Found')}`
+
+┌ 🏆 CreditScoreInfo:
+├─ creditScore: `{credit_score.get('creditScore', 'Not Found')}`
+├─ rewardState: `{credit_score.get('rewardState', '0')}`
+├─ periodicSummaryStartTime: `{format_time(credit_score.get('periodicSummaryStartTime', 'Not Found'))}`
+└─ periodicSummaryEndTime: `{format_time(credit_score.get('periodicSummaryEndTime', 'Not Found'))}`
+"""
   
     # Calculate elapsed time and wait if necessary so that response is sent after at least 1 second  
     elapsed = time.time() - start_time  
     if elapsed < 1:  
-        time.sleep(1 - elapsed)  
-  
-    total_time = time.time() - start_time  
-    response_message += f"\nTotal Time Taken: {total_time:.2f} seconds\n"  
+        time.sleep(1 - elapsed)
   
     return Response(response_message, mimetype='text/plain')  
   
