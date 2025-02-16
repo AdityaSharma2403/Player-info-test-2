@@ -272,10 +272,7 @@ Account Info:
     # Calculate elapsed time and wait if necessary so that response is sent after at least 1 second  
     elapsed = time.time() - start_time  
     if elapsed < 1:  
-        time.sleep(1 - elapsed)  
-  
-    total_time = time.time() - start_time  
-    response_message += f"\nTotal Time Taken: {total_time:.2f} seconds\n"  
+        time.sleep(1 - elapsed)
   
     return Response(response_message, mimetype='text/plain')  
   
