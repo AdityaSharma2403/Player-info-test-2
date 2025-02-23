@@ -308,6 +308,10 @@ def fetch_info():
     pet_type_name = get_title_name(pet_info.get('id', 'Not Found'))
 
     response_message = f"""
+Response 1:  
+Fetching details for UID {uid}, nickname {account_info.get('AccountName', 'Not Found')} in region {used_region}...  
+  
+Response 2:  
 ACCOUNT INFO:
 ┌ 👤 ACCOUNT BASIC INFO
 ├─ Name: {account_info.get('AccountName', 'Not Found')}
