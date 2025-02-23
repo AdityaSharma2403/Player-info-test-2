@@ -335,7 +335,6 @@ ACCOUNT INFO:
 ┌ 👕 ACCOUNT OVERVIEW
 ├─ Avatar ID: {account_info.get('AccountAvatarId', 'Default')}
 ├─ Banner ID: {account_info.get('AccountBannerId', 'Default')}
-├─ Pin ID: 910044001
 ├─ Equipped Skill: {formatted_skills}
 ├─ Equipped Gun ID: {gun_id}
 ├─ Equipped Animation ID: {animation_id}
